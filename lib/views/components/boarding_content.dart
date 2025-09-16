@@ -29,7 +29,7 @@ final String text, image;
           text,
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.amber
+            color: textColor
           ),
         )
       ],
