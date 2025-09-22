@@ -68,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                     text: "Sign In",
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushReplacementNamed(context, 'catalogue');
+                        Navigator.pushReplacementNamed(context, '/catalogue');
                       }
                     },
                     backgroundColor: primaryColor,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:owala_app/utils/const.dart';
-class BallanceCart extends StatelessWidget {
-  const BallanceCart({super.key});
+class BallanceCard extends StatelessWidget {
+  const BallanceCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +40,9 @@ class BallanceCart extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  "Rp 1.000.000.000",
+                  "Rp ∞ ",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.black
                   ),
@@ -52,7 +52,9 @@ class BallanceCart extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 3,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _actionButton(Icons.arrow_upward, "pay"),
                 _actionButton(Icons.add_circle, "top up"),
