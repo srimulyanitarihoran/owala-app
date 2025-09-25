@@ -20,7 +20,7 @@ class ItemsCard extends StatelessWidget {
               padding: EdgeInsets.all(defaultPadding),
               decoration: BoxDecoration(
                 color: product.color,
-                borderRadius: BorderRadius.circular(16)
+                borderRadius: BorderRadius.circular(20)
               ),
               child: Hero(
                 tag: "${product.id}",

@@ -11,13 +11,13 @@ final String text, image;
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(
+        Image.asset( 
           'assets/images/logo.png',
           fit: BoxFit.cover,
         ),
         Spacer(),
         Text(
-          "Owala",
+          "GlowEase",
           style: TextStyle(
             color: primaryColor,
             fontSize: getProporsionateScreenWidht(36),

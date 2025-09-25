@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:owala_app/data/cart_data.dart';
 import 'package:owala_app/models/products_model.dart';
 import 'package:owala_app/utils/const.dart';
 
@@ -25,45 +26,47 @@ class AddToCart extends StatelessWidget {
             child: IconButton(
               icon: Icon(Icons.add_shopping_cart_outlined),
               onPressed: () {
-                // TODO 1: menambahkan product kehalaman keranjang
+                var existing = cartItems.indexWhere(
+                  (item) => item.id == product.id,
+                );
+                if (existing == -1) {
+                  product.quantity = 1;
+                  cartItems.add(product);
+                } else {
+                  cartItems[existing].quantity++;
+                }
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content:
-                    Text("successfully added ${product.title}"),
-                    duration: Duration(seconds: 2),
-                  )
+                    content: Text("${product.title} ditambahkan ke cart!"),
+                  ),
                 );
               },
             ),
           ),
           Expanded(
-            child:
-            ElevatedButton(
+            child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: product.color,
                 maximumSize: Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18)
-                )
+                  borderRadius: BorderRadius.circular(18),
+                ),
               ),
               onPressed: () {
-                // TODO 2: direct button buy now ke halaman cart
+                Navigator.pushNamed(context, '/cart');
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text("${product.title} is purchased"),
                     duration: Duration(seconds: 2),
-                  )
+                  ),
                 );
               },
               child: Text(
                 "Buy Now",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: textColor
-                ),
+                style: TextStyle(fontWeight: FontWeight.bold, color: textColor),
               ),
-            ) 
-          )
+            ),
+          ),
         ],
       ),
     );

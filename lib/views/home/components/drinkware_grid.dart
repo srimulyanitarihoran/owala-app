@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:owala_app/Views/home/components/items_card.dart';
-import 'package:owala_app/data/products_data.dart';
+import 'package:owala_app/models/products_model.dart';
 import 'package:owala_app/utils/const.dart';
 
 class DrinkwareGrid extends StatelessWidget {
-  const DrinkwareGrid({super.key});
+  final List<ProductsModel> productsToShow;
+
+  const DrinkwareGrid({super.key, required this.productsToShow});
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +19,17 @@ class DrinkwareGrid extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisSpacing: defaultPadding,
           crossAxisSpacing: defaultPadding,
-          childAspectRatio: 0.75
+          childAspectRatio: 0.75,
         ),
-      itemCount: products.length,
-      itemBuilder: (context, index) => ItemsCard(
-      product: products [index], 
-      press: () => Navigator.pushNamed(
-        context, 
-        '/detail',
-        arguments: products[index]
-      )
-      ),
+        itemCount: productsToShow.length,
+        itemBuilder: (context, index) => ItemsCard(
+          product: productsToShow[index],
+          press: () => Navigator.pushNamed(
+            context, 
+            '/detail',
+            arguments: productsToShow[index],
+          ),
+        ),
       ),
     );
   }

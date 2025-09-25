@@ -35,7 +35,9 @@ class CatalogueAppBar extends StatelessWidget implements PreferredSizeWidget{
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/cart');
+          },
           icon: Icon(Icons.shopping_cart_outlined, color: Colors.black,),
         ),
         IconButton(

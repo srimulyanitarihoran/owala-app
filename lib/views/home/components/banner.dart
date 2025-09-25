@@ -3,7 +3,6 @@ import 'package:owala_app/models/products_model.dart';
 import 'package:owala_app/utils/const.dart';
 import 'package:owala_app/views/auth/login_screen.dart';
 import 'package:owala_app/views/auth/register_screen.dart';
-import 'package:owala_app/views/cart/cart_screen.dart';
 import 'package:owala_app/views/detail/detail_screen.dart';
 import 'package:owala_app/views/home/catalogue_screen.dart';
 import 'package:owala_app/views/onbording/onboarding_screen.dart';
@@ -41,7 +40,6 @@ class _OwalaAppState extends State<OwalaApp> {
         '/onboarding':(context) => OnboardingScreen(), 
         '/login':(context) => LoginScreen(),
         '/register':(context) => RegisterScreen(),
-        '/cart':(context) => CartScreen(),
         '/catalogue' :(context) => CatalogueScreen(),
         '/detail' :(context) => DetailScreen(
           product: ModalRoute.of(context)!.settings.arguments as ProductsModel,

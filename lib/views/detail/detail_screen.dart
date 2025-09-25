@@ -35,7 +35,9 @@ class DetailScreen extends StatelessWidget {
               Icons.shopping_cart_outlined,
               color: textColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/cart');
+            },
           )
         ],
       ),

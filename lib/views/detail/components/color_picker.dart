@@ -13,7 +13,7 @@ class ColorPicker extends StatelessWidget {
       // untuk color picker
       margin: EdgeInsets.only(
         left: defaultPadding,
-        right: defaultPadding
+        // right: defaultPadding / 4
         ),
         // jarak dari color picker ke teks color
         padding: EdgeInsets.all(2.5),

@@ -40,6 +40,7 @@ dependencies:
   smooth_page_indicator: ^1.2.1
   fluttertoast: ^8.2.12
   shared_preferences: ^2.5.3
+  imagebutton: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,10 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/images/drinkware/
+    - assets/images/serum/
+    - assets/images/toner/
+    - assets/images/moist/
+    - assets/images/sunscreen/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
